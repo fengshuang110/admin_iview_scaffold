@@ -1,6 +1,6 @@
 ##Vue + Iview + lumen  Admin 脚手架
 
-###先上图 演示地址 http://121.40.203.96/
+###先上图 演示地址 http://121.40.203.96/ admin  / admin123
 ![](https://i.imgur.com/waUcCMU.png)  ![](https://i.imgur.com/fkCwTZA.png)
 ![](https://i.imgur.com/MO9B91G.png)  ![](https://i.imgur.com/4hUfljh.png)
 ![](https://i.imgur.com/OfQ2jlC.png)	![](https://i.imgur.com/x3WBwJ4.png)
