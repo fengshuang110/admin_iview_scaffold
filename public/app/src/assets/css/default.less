@@ -1,0 +1,128 @@
+@import './cssreset.css';
+
+html, body {
+  font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #495060;
+  background: #f0f3f8;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+}
+#app {
+  height: inherit;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+
+@default-padding: 15px;
+@default-margin: 15px;
+// padding
+.default-padding {
+  padding: @default-padding;
+}
+.default-padding-top {
+  padding-top: @default-padding;
+}
+.default-padding-bottom {
+  padding-bottom: @default-padding;
+}
+.default-padding-left {
+  padding-left: @default-padding;
+}
+.default-padding-right {
+  padding-right: @default-padding;
+}
+
+// margin
+.default-margin {
+  margin: @default-margin;
+}
+.default-margin-top {
+  margin-top: @default-margin;
+}
+.default-margin-bottom {
+  margin-bottom: @default-margin;
+}
+.default-margin-left {
+  margin-left: @default-margin;
+}
+.default-margin-right {
+  margin-right: @default-margin;
+}
+
+// text-align
+@default-center:center;
+.default-align-center {
+  text-align:@default-center;
+}
+
+// float
+.default-float-left {
+  float:left;
+}
+
+.default-float-right {
+  float:right;
+}
+
+.default-form-layout {
+  &>.ivu-form-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.table-image {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/**
+ * element-ui 表格样式转为与iview-ui一至
+ */
+.el-table-iview.el-table {
+  width: 100%;
+  color: #495060;
+  thead {
+    color: #495060;
+    th {
+      background: #f8f8f9;
+    }
+  }
+}
+.el-table-iview.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: #f8f8f9;
+}
+
+.default-table-expand {
+  .item {
+    display: flex;
+    width: 100%;
+    padding: 5px 0;
+    .label {
+      width: 85px;
+      color: #99a9bf;
+      text-align: right;
+    }
+    .value {
+      flex: 1;
+      margin-left: 20px;
+      word-break: break-all;
+    }
+  }
+}
+
