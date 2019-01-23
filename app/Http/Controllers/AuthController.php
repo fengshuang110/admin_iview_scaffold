@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Business\Model\Admin\AdminUser;
 use App\Business\Constant\ErrorCode;
 use App\Business\Service\PermissionMenuService;
+use App\Business\Service\AuthService;
 use LogicException;
 
 class AuthController extends Controller{
@@ -33,10 +34,7 @@ class AuthController extends Controller{
             throw new LogicException('用户状态不可用，请联系管理员');
         }
         
-        $expire = time() + 24 * 60 * 60;
-        $cookie = sprintf("%s#%d", $user['name'], $expire);
-        $cookie .= '#' . md5($cookie . '#' . ErrorCode::COMMON_SIGN_KEY);
-        setcookie("api_token", $cookie, $expire, '/');
+       $user = AuthService::login($user);
         
         return $this->echoJson($user);
         

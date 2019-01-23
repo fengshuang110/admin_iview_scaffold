@@ -28,7 +28,6 @@ class AuthService{
 		return [
 			'username'=>$user['username'],
 			'avatar'=>$user['avatar'],
-			'token' => $api_token
 		];
 	}
 }
