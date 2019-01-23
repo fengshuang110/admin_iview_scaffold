@@ -57,6 +57,11 @@ class AuthController extends Controller{
         $menus = PermissionMenuService::getInstance()->getRoleMenu($user['role_id']);
         $permissionKeys = array_column($menus, 'permission_key');
         $groups = config("menus.menus");
+        if($user['id'] == 1){
+             return $this->echoJson([
+                'menus' => $groups,
+            ]);
+        }
         foreach ($groups as $key => &$item) {
             if(!in_array($item['permissionKey'], $permissionKeys) && 
                (env('APP_ENV') == 'prod' || env('APP_ENV') == 'beta')

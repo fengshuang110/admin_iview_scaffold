@@ -19,6 +19,9 @@ class PermissionMiddleware
     		return $next($request);
     	}
     	$user = Auth::user();
+        if($user['id'] == 1){
+            return $next($request);
+        }
     	$path = $request->path();
 
     	if(!RoleService::getInstance()->hasPermission($user['role_id'],$path)){
