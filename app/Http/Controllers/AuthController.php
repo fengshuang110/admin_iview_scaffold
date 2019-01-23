@@ -30,7 +30,7 @@ class AuthController extends Controller{
         if($user['password'] != md5($input['password'])) {
             throw new LogicException('密码错误');
         }
-        if($user['status'] != AdminUser::$statusMap['active']) {
+        if($user['id'] != 1 && $user['status'] != AdminUser::$statusMap['active']) {
             throw new LogicException('用户状态不可用，请联系管理员');
         }
         
