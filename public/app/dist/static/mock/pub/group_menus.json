@@ -1,0 +1,34 @@
+{
+  "errno": 0,
+  "errmsg": "ok",
+  "time": 1524371076,
+  "data": [
+  {
+    "name": "配置管理",
+    "menus": [
+    {
+      "name": "游戏配置",
+      "icon": "document-text",
+      "link": "/game/update"
+    },
+    {
+      "name": "渠道配置",
+      "icon": "chatbubbles",
+      "link": "/channel/list"
+    }]
+  },
+  {
+    "name": "测试分组",
+    "menus": [
+    {
+      "name": "测试1",
+      "icon": "heart",
+      "link": "/demo/demo1"
+    },
+    {
+      "name": "测试2",
+      "icon": "heart-broken",
+      "link": "/demo/demo2"
+    }]
+  }]
+}

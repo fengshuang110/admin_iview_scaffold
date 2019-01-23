@@ -14,7 +14,7 @@ function checkStatus (response) {
 const CODE_INVALID_LOGIN = 401
 
 export default function request (url, params, options) {
-  url = `http://localhost:8081${url}`
+  url = `/api${url}`
    // url = `http://localhost:9909${url}`
   const defaultOptions = {
     credentials: 'include'
