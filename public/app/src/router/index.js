@@ -57,9 +57,9 @@ export default new Router({
       component: resolve => require(['../pages/member/Index'], resolve)
     },
      {
-      path: '/acticle/index',
+      path: '/article/index',
       name: 'Article',
-      component: resolve => require(['../pages/article/Add'], resolve)
+      component: resolve => require(['../pages/article/Index'], resolve)
     },
     
     /**

@@ -44,16 +44,42 @@ return [
 		],
 		[
 			'name'  => '文章管理',
-			'link' => '/acticle/index',
-			'permissionKey'=>'acticle_manager',
+			'link' => '/article/index',
+			'permissionKey'=>'article_manager',
 			'menus' => [
 				[
 					'name' => '文章列表',
-					'link' => '/acticle/index',
-					'permissionKey'=>'acticle_manager',
+					'link' => '/article/index',
+					'permissionKey'=>'article_manager',
 				],
 			]
 		],
+		[
+			'name'  => '数据分析',
+			'link' => '/fenxi/index',
+			'permissionKey'=>'fenxi_manager',
+			'menus' => [
+				[
+					'name' => '数据分析',
+					'link' => '/fenxi/index',
+					'permissionKey'=>'fenxi_manager',
+				],
+			]
+		],
+
+		[
+			'name'  => '客户需求',
+			'link' => '/demand/index',
+			'permissionKey'=>'demand_manager',
+			'menus' => [
+				[
+					'name' => '需求列表',
+					'link' => '/demand/index',
+					'permissionKey'=>'demand_manager',
+				],
+			]
+		],
+		
 		
 		
 	]

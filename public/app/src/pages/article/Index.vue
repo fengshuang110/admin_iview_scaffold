@@ -48,8 +48,8 @@
 </template>
 <script>
 
-import api from '@/apis/articel';
-import tableCols from '@/tables/articel'
+import api from '@/apis/article';
+import tableCols from '@/tables/article'
 import utils from '@/utils'
 
 export default {
