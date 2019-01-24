@@ -11,8 +11,19 @@ import '@/assets/css/default.less'
 import '@/components/install'
 import '@/components/element-ui'
 import DefaultConfirm from '@/components/global/DefaultConfirm'
+import VueQuillEditor from 'vue-quill-editor'
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor)
+
+
+import DefaultEditor from '@/components/global/DefaultEditor'
 
 Vue.component('DefaultConfirm', DefaultConfirm)
+Vue.component('DefaultEditor', DefaultEditor)
+
 Vue.use(iView)
 
 Vue.config.productionTip = false

@@ -51,11 +51,15 @@ export default new Router({
       component: resolve => require(['../pages/admin/PermissionMenu'], resolve)
     },
 
-
      {
       path: '/member/index',
       name: 'Member',
       component: resolve => require(['../pages/member/Index'], resolve)
+    },
+     {
+      path: '/acticle/index',
+      name: 'Article',
+      component: resolve => require(['../pages/article/Add'], resolve)
     },
     
     /**

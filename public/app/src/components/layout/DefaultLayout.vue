@@ -102,28 +102,19 @@
           </div>
         <!-- </transition> -->
 
-        <Menu
-          class="default-menus"
+        <Menu   class="default-menus"
           theme="dark"
           ref="menuRef"
           :active-name="activeMenu"
-          @on-select="handleClick"
-        >
-          <MenuGroup
-            v-for="(group, _gk) in groupMenus"
-            :title="group.name"
-            :key="_gk"
-          >
-            <MenuItem
-              v-for="(menu, _mk) in group.menus"
-              :name="menu.link"
-              :key="_mk"
-            >
-              <Icon :type="menu.icon" />
-              {{ menu.name }}
-            </MenuItem>
-          </MenuGroup>
-        </Menu>
+          @on-select="handleClick">
+                <Submenu :name="group.name"  v-for="(group, _gk) in groupMenus">
+                    <template slot="title">
+                        <Icon type="ios-paper" />
+                        {{group.name}}
+                    </template>
+                    <MenuItem  v-for="(menu, _mk) in group.menus"  :name="menu.link">{{menu.name}}</MenuItem>
+                </Submenu>
+            </Menu>
       </div>
 
       <!-- 主内容区域 -->

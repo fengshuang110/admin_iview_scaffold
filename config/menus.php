@@ -42,6 +42,19 @@ return [
 				],
 			]
 		],
+		[
+			'name'  => '文章管理',
+			'link' => '/acticle/index',
+			'permissionKey'=>'acticle_manager',
+			'menus' => [
+				[
+					'name' => '文章列表',
+					'link' => '/acticle/index',
+					'permissionKey'=>'acticle_manager',
+				],
+			]
+		],
+		
 		
 	]
 		
