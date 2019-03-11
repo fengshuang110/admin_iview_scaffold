@@ -16,56 +16,14 @@ $router->get('/', function () use ($router) {
 });
 
 
-// $router->group([
-// ], function () use ($router) {
-// 	$router->get('/test/excel', ['uses' => 'ExampleController@excel']);
-// 	$router->get('/queue/rabbitMq', ['uses' => 'QueueController@rabbitMq']);
-// 	$router->get('/sms/send', ['uses' => 'SmsController@send']);
-// 	//友盟推送
-// 	$router->get('/test/umeng', ['uses' => 'ExampleController@umeng']);
-// 	//支付宝充值
-// 	$router->get('/pay/alipay', ['uses' => 'PayController@alipay']);
-// 	//微信充值
-// 	$router->get('/pay/wechat', ['uses' => 'PayController@wechat']);
-// 	// 支付宝打款
-// 	$router->get('/pay/transfer/alipay', ['uses' => 'PayController@transferAlipay']);
-// 	//微信打款
-// 	$router->get('/pay/transfer/wechat', ['uses' => 'PayController@transferWechat']);
-// 	//微信  QQ 微博三方登录
-// 	$router->get('/oauth/redirect', ['uses' => 'OauthController@oauthRedirect']);
-// 	$router->get('/oauth/indentify', [ 'as' => 'oauthIndentify','uses' => 'OauthController@indentify']);
-// });
+$router->group([
+], function () use ($router) {
+	//支付宝充值
+	$router->get('/pay/notify/wechat', ['uses' => 'PayController@wechat_notify']);
+	$router->post('/pay/notify/wechat', ['uses' => 'PayController@wechat_notify']);
+});
 
 
-// $router->group([
-// 	'middleware' => ['encrypt'],//AES RSA加解密
-// ], function () use ($router) {
-// 	$router->get('/encrypt/demo', ['uses' => 'EncryptController@demo']);
-// });
-
-
-// $router->group([
-// ], function () use ($router) {
-// 	$router->get('/test/psr0', ['uses' => 'TestController@psr0']);
-// });
-
-
-// $router->group([
-// 	'prefix' => 'admin',//AES RSA加解密
-// 	'namespace' => '\App\Http\Controllers\Admin',
-// ], function () use ($router) {
-
-// 	$router->post('/auth/login', ['uses' => 'AuthController@login']);
-// 	$router->get('/user/info', ['uses' => 'UserController@info']);
-// 	$router->get('/user', ['uses' => 'UserController@pages']);
-// 	$router->get('/permissions', ['uses' => 'PermissionController@allPermissions']);
-// 	$router->get('/permission', ['uses' => 'PermissionController@pages']);
-// 	$router->get('/permission/menu', ['uses' => 'PermissionController@permissionMenu']);
-// 	$router->post('/permission/menu/create', ['uses' => 'PermissionMenuController@create']);
-// 	$router->post('/permission/menu/delete', ['uses' => 'PermissionMenuController@delete']);
-	
-
-// });
 
 $router->group([
 ], function () use ($router) {
