@@ -16,7 +16,6 @@ class LogMiddleware
     {
         // before action
         $start_time = Tool::microtime();
-
         // do action
         $response = $next($request);
         // after action
@@ -40,5 +39,14 @@ class LogMiddleware
             'cost' => $cost,
         ];
         Log::critical('_ACCESS_', $context);
+
+        $xhprof_data = xhprof_disable();
+        include_once "/data/code/xhprof/xhprof_lib/utils/xhprof_lib.php";
+        include_once "/data/code/xhprof/xhprof_lib/utils/xhprof_runs.php";
+        // save raw data for this profiler run using default
+        // implementation of iXHProfRuns.
+        $xhprof_runs = new \XHProfRuns_Default();
+        // save the run under a namespace "xhprof_foo"
+        $run_id = $xhprof_runs->save_run($xhprof_data, "xhprof_foo");
     }
 }

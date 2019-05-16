@@ -26,16 +26,17 @@ $router->group([
 
 
 $router->group([
+    'middleware'=>['validator'],
 ], function () use ($router) {
 	$router->get('/auth/get_user', ['uses' =>'AuthController@getUser']);
-	$router->post('/auth/login', ['uses' => 'AuthController@login']);
+	$router->get('/auth/login', ['uses' => 'AuthController@login']);
 	$router->get('/auth/logout', ['uses' => 'AuthController@logout']);
 	$router->get('/auth/group_menus', ['uses' => 'AuthController@groupMenus']);
 });
 
 
 $router->group([
-	'middleware'=>['permission'],
+	'middleware'=>['validator','permission'],
 ], function () use ($router) {
 	$router->get('user/index', ['uses' => 'UserController@index']);
 	$router->get('user/toggle', ['uses' => 'UserController@toggle']);

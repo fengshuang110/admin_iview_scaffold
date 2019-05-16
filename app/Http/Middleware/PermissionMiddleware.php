@@ -14,7 +14,6 @@ class PermissionMiddleware
 {
     public function handle($request, Closure $next)
     {
-
     	if(env('APP_ENV') == 'test' || env('APP_ENV') == 'local'){
     		return $next($request);
     	}

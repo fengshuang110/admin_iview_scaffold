@@ -37,13 +37,13 @@ return [
 
         'full' => [
             'driver' => 'daily',
-            'path' => "D:\\workspace\\logs\\lumen.full",
+            'path' => "/data/log/lumen/lumen.full",
             'level' => 'debug',
             'days' => 90,
         ],
         'alert' => [
             'driver' => 'daily',
-            'path' => "D:\\workspace\\logs\\lumen.alert",
+            'path' => "/data/log/lumen/lumen.alert",
             'level' => 'alert',
             'days' => 30,
         ],

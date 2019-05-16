@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\ValidatorMiddleware;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 try {
@@ -61,11 +63,12 @@ $app->singleton(
 */
 
 $app->middleware([
-    App\Http\Middleware\LogMiddleware::class
+    App\Http\Middleware\LogMiddleware::class,
 ]);
 
 
 $app->routeMiddleware([
+    'validator' => App\Http\Middleware\ValidatorMiddleware::class,
     'permission'=> App\Http\Middleware\PermissionMiddleware::class,
 ]);
 

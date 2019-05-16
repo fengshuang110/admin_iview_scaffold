@@ -23,7 +23,7 @@ class TestJob extends Job
     public function handle()
     {
         // php artisan queue:work --daemon --queue=test --tries=15 --timeout=60 
-        var_dump($this->message);
+        echo ($this->message);
         //http 请求发送功能 参数定义
         //http($url,$params);
     }

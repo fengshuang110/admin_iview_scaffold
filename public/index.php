@@ -1,5 +1,5 @@
 <?php
-
+xhprof_enable();
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -10,28 +10,33 @@
 | is ready to receive HTTP / Console requests from the environment.
 |
 */
+try{
+    $app = require __DIR__.'/../bootstrap/app.php';
 
-$app = require __DIR__.'/../bootstrap/app.php';
+    /*
+    |--------------------------------------------------------------------------
+    | Run The Application
+    |--------------------------------------------------------------------------
+    |
+    | Once we have the application, we can handle the incoming request
+    | through the kernel, and send the associated response back to
+    | the client's browser allowing them to enjoy the creative
+    | and wonderful application we have prepared for them.
+    |
+    */
 
-/*
-|--------------------------------------------------------------------------
-| Run The Application
-|--------------------------------------------------------------------------
-|
-| Once we have the application, we can handle the incoming request
-| through the kernel, and send the associated response back to
-| the client's browser allowing them to enjoy the creative
-| and wonderful application we have prepared for them.
-|
-*/
+    header('Access-Control-Allow-Origin: http://localhost:88');
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
+    header('Access-Control-Allow-Headers:x-requested-with, content-type');
 
-header('Access-Control-Allow-Origin: http://localhost:88');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods:POST,GET,OPTIONS');
-header('Access-Control-Allow-Headers:x-requested-with, content-type');
+    if (strtolower($_SERVER['REQUEST_METHOD']) == 'options') {
+        exit;
+    }
 
-if (strtolower($_SERVER['REQUEST_METHOD']) == 'options') {
-    exit;
+    $app->run();
+}catch(\Exception $e){
+    var_dump($e->getMessage());die;
+}finally{
+
 }
-
-$app->run();

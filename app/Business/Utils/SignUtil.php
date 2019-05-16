@@ -36,7 +36,7 @@ class SignUtil
     
     public static function verifySign($params, $sign, $md5_key)
     {
-    	return self::genSign($params, $md5_key) === $sign;
+    	return self::sdkSign($params, $md5_key) === $sign;
     }
 
 }

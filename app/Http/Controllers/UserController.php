@@ -14,14 +14,16 @@ class UserController extends Controller {
     public function __construct(){
         $this->adminUser = Auth::user();
     }
-    
+
+    /**
+     * @Validator\ParamRules(
+     *  int64={"type": "int64", "min": 1000, "max": 9999, "required": true},
+     *  name={"type": "string", "min": 0, "max": 200},
+     * )
+     */
     public function index(Request $request){
-        $name = $request->input('name');
-        $where = [];
-        if(!empty($name)){
-            $where[] = ['name','like','%'.$name.'%'];
-        }
-        $adminUser = Auth::user();
+        $name = $request->get('name');
+        $where[] =$name ? ['name','like','%'.$name.'%'] : [];
         $data = UserService::getInstance()->pages($where);
         return $this->echoJson($data);
     }
