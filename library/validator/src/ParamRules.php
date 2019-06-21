@@ -72,9 +72,4 @@ class ParamRules
     {
         return $this->request->has($param) || isset($_FILES[$param]);
     }
-
-    public static function test()
-    {
-        echo 1;die;
-    }
 }
